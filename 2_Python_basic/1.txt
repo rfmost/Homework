@@ -1,0 +1,105 @@
+Задание 1. Даны 2 строки: long_phrase и short_phrase. Напишите код, который проверяет действительно ли длинная фраза long_phrase длиннее короткой short_phrase. И выводит True или False в зависимости от результата сравнения.
+In [14]:
+
+
+long_phrase = 'Насколько проще было бы писать программы, если бы не заказчики'
+short_phrase = '640Кб должно хватить для любых задач. Билл Гейтс (по легенде)'
+
+
+
+In [15]:
+
+
+if len(long_phrase) > len(short_phrase):
+    print('True')
+else:
+    print ('False')
+
+
+
+True
+
+Задание 2. Дано значение объема файла в байтах (в мегабайте 2^20 байт). Напишите перевод этого значения в мегабайты в формате: "Объем файла равен 213.68Mb".
+In [22]:
+
+
+input_value = int(input('Введите значение объема файла в байтах '))
+value = input_value / 2**20
+print('Объем файла равен', value,'Mb')
+
+
+
+Введите значение объема файла в байтах 1048576
+Объем файла равен 1.0 Mb
+
+Задание 3. Разработать приложение для определения знака зодиака по дате рождения. Пример:
+Введите месяц: март
+Введите число: 6
+Вывод: Рыбы
+
+month = input('Введите месяц: ')
+print()
+date = int(input('Введите число: '))
+print()
+if (month == 'январь' or month =='Январь') and 1 <= date <= 22:
+    print('Вывод: Козерог')
+elif (month == 'январь' or month =='Январь') and 23 <= date <= 31:
+    print('Вывод: Водолей')
+elif (month == 'февраль' or month =='Февраль') and 1 <= date <= 22:
+    print('Вывод: Водолей')
+elif (month == 'февраль' or month =='Февраль') and 23 <= date <= 29:
+    print('Вывод: Рыбы')
+elif (month == 'март' or month =='Март') and 1 <= date <= 22:
+    print('Вывод: Рыбы')
+elif (month == 'март' or month =='Март') and 23 <= date <= 31:
+    print('Вывод: Овен')
+elif (month == 'апрель' or month =='Апрель') and 1 <= date <= 22:
+    print('Вывод: Овен')
+elif (month == 'апрель' or month =='Апрель') and 23 <= date <= 31:
+    print('Вывод: Телец')
+elif (month == 'май' or month =='Май') and 1 <= date <= 22:
+    print('Вывод: Телец')
+elif (month == 'май' or month =='Май') and 23 <= date <= 31:
+    print('Вывод: Близнецы')
+elif (month == 'июнь' or month =='Июнь') and 1 <= date <= 22:
+    print('Вывод: Близнецы')
+elif (month == 'июнь' or month =='Июнь') and 23 <= date <= 31:
+    print('Вывод: Рак')
+elif (month == 'июль' or month =='Июль') and 1 <= date <= 22:
+    print('Вывод: Рак')
+elif (month == 'июль' or month =='Июль') and 23 <= date <= 31:
+    print('Вывод: Лев')
+elif (month == 'август' or month =='Август') and 1 <= date <= 22:
+    print('Вывод: Лев')
+elif (month == 'август' or month =='Август') and 23 <= date <= 31:
+    print('Вывод: Дева')
+elif (month == 'сентябрь' or month =='Сентябрь') and 1 <= date <= 22:
+    print('Вывод: Дева')
+elif (month == 'сентябрь' or month =='Сентябрь') and 23 <= date <= 31:
+    print('Вывод: Весы')
+elif (month == 'октябрь' or month =='Октябрь') and 1 <= date <= 22:
+    print('Вывод: Весы')
+elif (month == 'октябрь' or month =='Октябрь') and 23 <= date <= 31:
+    print('Вывод: Скорпион')
+elif (month == 'ноябрь' or month =='Ноябрь') and 1 <= date <= 22:
+    print('Вывод: Скорпион')
+elif (month == 'ноябрь' or month =='Ноябрь') and 23 <= date <= 31:
+    print('Вывод: Стрелец')
+elif (month == 'декабрь' or month =='Декабрь') and 1 <= date <= 22:
+    print('Вывод: Стрелец')
+elif (month == 'декабрь' or month =='Декабрь') and 23 <= date <= 31:
+    print('Вывод: Козерог')
+else:
+    print('Некорректный ввод')
+
+salary = int(input('Введите заработную плату в месяц: '))
+cost_of_hypothec_perc = int(input('Введите, сколько процентов уходит на ипотеку: '))
+cost_of_life_perc = int(input('Введите, сколько процентов уходит на жизнь: '))
+number_of_reward = int(input ('Введите количество премий за год: '))
+# cost_of_hypotec_rub = salary*(cost_of_hypotec_perc/100)
+# cost_of_life_rub = salary*(cost_of_life_perc/100)
+pension_accumulation_month = salary - salary * (cost_of_hypothec_perc + cost_of_life_perc) / 100
+accumulation_from_reward = salary * number_of_reward / 2
+cost_of_hypothec_total = salary * cost_of_hypothec_perc/100 * 12
+accumulation_total = accumulation_from_reward + pension_accumulation_month * 12
+print('На ипотеку было потрачено: ', cost_of_hypothec_total, ' рублей. Было накоплено: ', accumulation_total, 'рублей')
